@@ -1,0 +1,42 @@
+<div class="row d-flex justify-content-center mt-3">
+    <div class="col-6 text-center">
+        <h1>Ver apuestas</h1>
+        <a [routerLink]="['/apuestas/nueva']" class="btn btn-success">Realizar apuesta</a>
+        <table class="table table-striped" *ngIf="apuestas">
+            <thead>
+                <tr>
+                    <th>Usuario</th>
+                    <th>Resultado</th>
+                    <th>Fecha</th>
+                    <th>Acción</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let apuesta of apuestas">
+                    <td>{{apuesta.usuario}}</td>
+                    <td>{{apuesta.resultado}}</td>
+                    <td>{{apuesta.fecha}}</td>
+                    <td><button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" [attr.data-bs-target]="'#id' + apuesta.idApuesta">Eliminar</button></td>
+                    <div class="modal fade" [id]="'id' + apuesta.idApuesta" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title" id="exampleModalLabel">¿Estás seguro de eliminar esta apuesta?</h5>
+                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                              <button type="button" (click)="eliminarApuesta(apuesta.idApuesta)" data-bs-dismiss="modal" class="btn btn-danger">Eliminar</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                </tr>
+            </tbody>
+        </table>
+        <div *ngIf="!apuestas">
+            <h2>Cargando...</h2>
+            <img src="https://acegif.com/wp-content/uploads/loading-25.gif">
+        </div>
+    </div>
+</div>

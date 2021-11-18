@@ -1,0 +1,23 @@
+<div class="row d-flex justify-content-center mt-3">
+    <div class="col-6 text-center">
+        <h1>Nueva apuesta</h1>
+        <p>Local: Real Madrid - Visitante: Atletico de Madrid</p>
+        <form #formApuesta="ngForm" (ngSubmit)="crearApuesta()">
+            <div class="mb-3">
+                <label for="cajausuario" class="form-label">Usuario</label>
+                <input type="text" class="form-control" #cajausuario name="cajausuario" id="cajausuario">
+            </div>
+            <div class="mb-3">
+                <label for="cajaresultado" class="form-label">Resultado</label>
+                <input type="text" class="form-control" #cajaresultado name="cajaresultado" id="cajaresultado">
+            </div>
+            <div class="mb-3">
+                <label for="cajafecha" class="form-label">Fecha</label>
+                <input type="text" class="form-control" #cajafecha name="cajafecha" id="cajafecha">
+            </div>
+            <button class="btn btn-success m-1">Crear apuesta</button>
+            <a [routerLink]="['/apuestas']" class="btn btn-secondary m-1">Volver</a>
+        </form>
+        
+    </div>
+</div>

@@ -1,0 +1,21 @@
+<div class="row d-flex justify-content-center mt-3">
+    <div class="col-6 text-center" *ngIf="equipo">
+        <h1>Detalles jugador</h1>
+        <div class="card" *ngIf="jugador">
+            <div class="card-header">
+              {{jugador.nombre}}
+            </div>
+            <div class="card-body">
+              <img [src]="jugador.imagen" height="200px">
+              <h3>Posición: {{jugador.posicion}}</h3>
+              <p>{{jugador.fechaNacimiento}}</p>
+              <p>Pais: {{jugador.pais}}</p>
+              <a [routerLink]="['/equipos', equipo.idEquipo, 'jugadores']" class="btn btn-secondary m-1">Volver</a>
+            </div>
+        </div>
+        <div *ngIf="!jugador">
+            <h2>Cargando...</h2>
+            <img src="https://acegif.com/wp-content/uploads/loading-25.gif">
+        </div>
+    </div>
+</div>

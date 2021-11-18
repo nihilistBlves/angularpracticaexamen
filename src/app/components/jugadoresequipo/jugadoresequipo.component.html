@@ -1,0 +1,25 @@
+<div class="row d-flex justify-content-center mt-3">
+    <div class="col-6 text-center" *ngIf="equipo">
+        <h1>Jugadores del {{equipo.nombre}}</h1>
+        <table class="table table-striped" *ngIf="jugadores">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Imagen</th>
+                    <th>Acción</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let jug of jugadores">
+                    <td>{{jug.nombre}}</td>
+                    <td><img [src]="jug.imagen" height="100px"></td>
+                    <td><a [routerLink]="['/equipos', equipo.idEquipo, 'jugadores', jug.idJugador]" class="btn btn-success">Ver detalles</a></td>
+                </tr>
+            </tbody>
+        </table>
+        <div *ngIf="!jugadores">
+            <h2>Cargando...</h2>
+            <img src="https://acegif.com/wp-content/uploads/loading-25.gif">
+        </div>
+    </div>
+</div>
