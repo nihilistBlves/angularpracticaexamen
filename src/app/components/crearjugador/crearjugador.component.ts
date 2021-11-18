@@ -13,7 +13,7 @@ export class CrearjugadorComponent implements OnInit {
   public equipos!: Array<Equipo>;
   @ViewChild('cajanombre') cajanombre!: ElementRef;
   @ViewChild('cajaposicion') cajaposicion!: ElementRef;
-  @ViewChild('cajaimagen') cajaimagen!: ElementRef;
+  public selectedFile!: File;
   @ViewChild('cajafecha') cajafecha!: ElementRef;
   @ViewChild('cajapais') cajapais!: ElementRef;
   @ViewChild('selectequipos') selectequipos!: ElementRef;
@@ -27,12 +27,20 @@ export class CrearjugadorComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  crearJugador(): void {
+  changeFile(event: any) {
+    this.selectedFile = event.target.files[0];
+  }
 
+  crearJugador(): void {
+    //console.log(this.selectedFile);
+    // this._serviceFileUpload.uploadFile(file).subscribe(response => {
+    //   console.log("OK");
+    // });
   }
 
   subirFoto(): void {
-    var file = new File(this.cajaimagen.nativeElement.value, )
-    this._serviceFileUpload.uploadFile()
+    this._serviceFileUpload.uploadFile(this.selectedFile).subscribe(response => {
+      console.log("ok");
+    });
   }
 }

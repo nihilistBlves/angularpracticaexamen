@@ -21,6 +21,10 @@
             </ul>
           </li>
         </ul>
+        <form class="d-flex" #formBusqueda (ngSubmit)="buscarJugador()">
+          <input class="form-control me-2" type="search" #cajabusqueda name="cajabusqueda" placeholder="Buscar jugador" aria-label="Search">
+          <button class="btn btn-outline-primary" type="submit">Buscar</button>
+        </form>
       </div>
     </div>
   </nav>

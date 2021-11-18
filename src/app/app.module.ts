@@ -17,6 +17,8 @@ import { JugadoresService } from './services/jugadores.service';
 import { ApuestasService } from './services/apuestas.service';
 import { CrearjugadorComponent } from './components/crearjugador/crearjugador.component';
 import { FileUploadService } from './services/fileupload.service';
+import { BuscarJugadorComponent } from './components/buscar-jugador/buscar-jugador.component';
+import { Error404Component } from './components/error404/error404.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +31,8 @@ import { FileUploadService } from './services/fileupload.service';
     JugadoresequipoComponent,
     DetallesjugadorComponent,
     CrearjugadorComponent,
+    BuscarJugadorComponent,
+    Error404Component,
   ],
   imports: [
     BrowserModule,

@@ -1,7 +1,7 @@
 <div class="row d-flex justify-content-center mt-3">
     <div class="col-6 text-center">
         <h1>Crear jugador</h1>
-        <form #formJugador="ngForm">
+        <form #formJugador="ngForm" (ngSubmit)="subirFoto()">
             <div class="mb-3">
                 <label for="caja" class="form-label">Nombre</label>
                 <input type="text" class="form-control" #cajanombre name="cajanombre" id="cajanombre">
@@ -12,7 +12,7 @@
             </div>
             <div class="mb-3">
                 <label for="cajaimagen" class="form-label">Imagen</label>
-                <input type="image" class="form-control" #cajaimagen name="cajaimagen" id="cajaimagen">
+                <input type="file" (change)="changeFile($event)" class="form-control" #cajaimagen name="cajaimagen" id="cajaimagen">
             </div>
             <div class="mb-3">
                 <label for="cajafecha" class="form-label">Fecha de nacimiento</label>

@@ -12,7 +12,7 @@ export class FileUploadService {
     ) {}
 
     uploadFile(file: File): Observable<any> {
-        const endpoint = "../../assets/images/";
+        const endpoint = this.appUrl + "assets/images/";
         const formData: FormData = new FormData();
         formData.append("fileKey", file, file.name);
         return this._http.post(endpoint, formData);
