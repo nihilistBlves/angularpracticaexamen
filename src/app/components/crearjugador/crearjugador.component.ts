@@ -27,4 +27,12 @@ export class CrearjugadorComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  crearJugador(): void {
+
+  }
+
+  subirFoto(): void {
+    var file = new File(this.cajaimagen.nativeElement.value, )
+    this._serviceFileUpload.uploadFile()
+  }
 }

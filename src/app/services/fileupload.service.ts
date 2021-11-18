@@ -8,9 +8,14 @@ export class FileUploadService {
     appUrl = "http://localhost:4200/";
 
     constructor(
+        private _http: HttpClient
     ) {}
 
-    upload(file: File): Observable<any> {
+    uploadFile(file: File): Observable<any> {
+        const endpoint = "../../assets/images/";
+        const formData: FormData = new FormData();
+        formData.append("fileKey", file, file.name);
+        return this._http.post(endpoint, formData);
     }
     
 }
