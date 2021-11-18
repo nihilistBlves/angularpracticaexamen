@@ -1,0 +1,34 @@
+<div class="row d-flex justify-content-center mt-3">
+    <div class="col-6 text-center">
+        <h1>Crear jugador</h1>
+        <form #formJugador="ngForm">
+            <div class="mb-3">
+                <label for="caja" class="form-label">Nombre</label>
+                <input type="text" class="form-control" #cajanombre name="cajanombre" id="cajanombre">
+            </div>
+            <div class="mb-3">
+                <label for="cajaposicion" class="form-label">Posicion</label>
+                <input type="text" class="form-control" #cajaposicion name="cajaposicion" id="cajaposicion">
+            </div>
+            <div class="mb-3">
+                <label for="cajaimagen" class="form-label">Imagen</label>
+                <input type="image" class="form-control" #cajaimagen name="cajaimagen" id="cajaimagen">
+            </div>
+            <div class="mb-3">
+                <label for="cajafecha" class="form-label">Fecha de nacimiento</label>
+                <input type="text" class="form-control" #cajafecha name="cajafecha" id="cajafecha">
+            </div>
+            <div class="mb-3">
+                <label for="cajapais" class="form-label">Pais</label>
+                <input type="text" class="form-control" #cajapais name="cajapais" id="cajapais">
+            </div>
+            <div class="mb-3">
+                <label for="selectequipo" class="form-label">Equipo</label>
+                <select #selectequipo name="selectequipo" id="selectequipo">
+                    <option *ngFor="let equipo of equipos" [value]="equipo.idEquipo">{{equipo.nombre}}</option>
+                </select>            
+            </div>
+            <button class="btn btn-success">Crear jugador</button>
+        </form>
+    </div>
+</div>

@@ -15,6 +15,8 @@ import { appRoutingProviders, routing } from './app.routing';
 import { EquiposService } from './services/equipos.service';
 import { JugadoresService } from './services/jugadores.service';
 import { ApuestasService } from './services/apuestas.service';
+import { CrearjugadorComponent } from './components/crearjugador/crearjugador.component';
+import { FileUploadService } from './services/fileupload.service';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,8 @@ import { ApuestasService } from './services/apuestas.service';
     CrearapuestaComponent,
     DetallesequipoComponent,
     JugadoresequipoComponent,
-    DetallesjugadorComponent
+    DetallesjugadorComponent,
+    CrearjugadorComponent,
   ],
   imports: [
     BrowserModule,
@@ -33,7 +36,7 @@ import { ApuestasService } from './services/apuestas.service';
     FormsModule,
     routing
   ],
-  providers: [appRoutingProviders, EquiposService, JugadoresService, ApuestasService],
+  providers: [appRoutingProviders, EquiposService, JugadoresService, ApuestasService, FileUploadService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
